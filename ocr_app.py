@@ -3,6 +3,10 @@ import numpy as np
 from PIL import Image, ImageDraw
 import easyocr
 from transformers import VisionEncoderDecoderModel, TrOCRProcessor
+import warnings
+warnings.filterwarnings('ignore', category=FutureWarning)
+warnings.filterwarnings('ignore', message='Some weights of VisionEncoderDecoderModel were not initialized')
+
 
 # Load the Hugging Face model and processor
 processor = TrOCRProcessor.from_pretrained('microsoft/trocr-base-handwritten')
